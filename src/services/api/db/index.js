@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const db = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://freelance-student-job.herokuapp.com/",
 });
 
 export default db;
