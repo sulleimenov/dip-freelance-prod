@@ -1,0 +1,258 @@
+.box
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	max-width: 1200px
+	min-height: 800px
+	background-color: $white
+	margin: 0 auto
+	border-radius: $border-radius
+	@include media-breakpoint-down(md)
+		border-radius: 0
+	&__body
+		flex: 1 0 100%
+		padding: 30px 50px
+		@include media-breakpoint-down(md)
+			padding: 30px 15px
+
+.title
+	font-size: 20px
+	font-weight: 700
+	margin-bottom: 20px
+	&.center
+		text-align: center
+
+.subtitle
+	font-size: 16px
+	font-weight: 500
+	margin-bottom: 15px
+
+.error
+	color: red
+
+.find,
+.post
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	padding: 0 20px
+	height: 30px
+	border-radius: $border-radius-sm
+	text-decoration: none
+
+.find
+	border: 1px solid $gray
+	margin-right: 15px
+	&:hover
+		background-color: #fafafa
+		color: $textcolor
+
+.post
+	background-color: $accent
+	color: $white
+	transition: background 0.1s ease
+	&:hover
+		color: $white
+		background-color: #6d9d31
+
+.loading
+	position: absolute
+	display: inline-block
+	width: 50px
+	height: 50px
+	margin: auto
+	border-radius: 50%
+	top: -200px
+	bottom: 0
+	right: 0
+	left: 0
+	animation: circle 0.6s infinite
+	&>div
+		position: absolute
+		width: 6px
+		height: 6px
+		border-radius: 50%
+		background: $accent
+		animation-timing-function: cubic-bezier(0, 1, 1, 0)
+	&>div:nth-child(1)
+		top: 22px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(2)
+		top: 22px
+		right: 0
+		// animation: loading 0.6s infinite
+	&>div:nth-child(3)
+		left: 22px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(4)
+		bottom: 0
+		left: 22px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(5)
+		top: 6px
+		left: 6px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(6)
+		top: 6px
+		right: 6px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(7)
+		bottom: 6px
+		left: 6px
+		// animation: loading 0.6s infinite
+	&>div:nth-child(8)
+		bottom: 6px
+		right: 6px
+		// animation: loading 0.6s infinite
+@keyframes loading
+	0%
+		transform: scale(0)
+	100%
+		transform: scale(1)
+
+@keyframes circle
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
+
+.button
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	text-decoration: none
+	background-color: $accent
+	color: $white
+	font-weight: 500
+	border: none
+	border-radius: $border-radius-sm
+	padding: 0 22px
+	height: 38px
+	text-align: center
+	transition: background 0.1s ease
+	&:disabled
+		background-color: #cccdca
+		&:hover
+			background-color: #cccdca
+	&:hover
+		background-color: #6d9d31
+		color: #fff
+	&_waiting
+		background-color: #E58A00
+		cursor: default!important
+		&:hover
+			background-color: #E58A00
+	&.full
+		width: 100%
+	&--white
+		background-color: #fafafa
+		color: $textcolor
+		border: 1px solid #f1efef
+		&:hover
+			background-color: #f1efef
+			color: $textcolor
+
+.input
+	display: flex
+	flex-direction: column
+	margin-top: 20px
+	label
+		font-weight: 500
+		margin-bottom: 5px
+
+.text
+	margin-bottom: 15px
+	&:last-child
+		margin-bottom: 0
+
+.input-box
+	display: flex
+	justify-content: space-between
+	border: 1px solid #CCCDCA
+	border-radius: $border-radius-sm
+	overflow: hidden
+	&__contract
+		display: flex
+		align-items: center
+		column-gap: 7px
+		padding: 0 15px
+		border-right: 1px solid #CCCDCA
+		height: 38px
+		&>label
+			margin-bottom: 0
+	input
+		flex: 1 100%
+		border-left: none
+		border: none
+		border-radius: 0
+	&__info
+		display: flex
+		flex: 1 0 100px
+		width: 100px
+		justify-content: center
+		align-items: center
+		column-gap: 7px
+		padding: 0 15px
+		border-left: 1px solid #CCCDCA
+		height: 38px
+
+.input-radio
+	display: flex
+	align-items: center
+	column-gap: 7px
+	label
+		margin-bottom: 0
+
+.rows
+	display: flex
+	column-gap: 25px
+
+.back
+	font-weight: 700
+	border: none
+	background-color: transparent
+	background-image: url(/assets/images/back.svg)
+	background-repeat: no-repeat
+	background-position: left center
+	padding-left: 24px
+	cursor: pointer
+	margin-bottom: 30px
+	transition: all 0.1s ease
+	&:hover
+		background-image: url(/assets/images/back-hover.svg)
+		color: $accent
+
+input,
+textarea
+	border: 1px solid #cccdca
+	border-radius: $border-radius-sm
+	height: 38px
+	padding: 0 15px
+
+textarea
+	padding: 15px
+	height: 200px
+
+a
+	color: $textcolor
+	transition: color .1s ease
+	&:hover
+		color: $accent
+
+.need-log
+	text-align: center
+	padding-top: 80px
+	&__message
+		font-weight: 700
+		font-size: 20px
+		margin-bottom: 30px
+	&__button
+		display: flex
+		justify-content: center
+		gap: 15px
+
+.success
+	font-size: 18px
+	color: #82B93C
+	font-weight: 700
+	margin-top: 40px

@@ -1,0 +1,40 @@
+.filter
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-column-gap: 30px
+	margin-bottom: 40px
+	@include media-breakpoint-down(lg)
+		grid-template-columns: repeat(1, 1fr)
+	&__input
+		display: flex
+		flex-direction: column
+
+.task-list
+	display: grid
+	grid-template-columns: repeat(1, 1fr)
+	grid-row-gap: 20px
+	&__item
+		padding: 30px 25px
+		background-color: $green-ligth
+		border-radius: $border-radius
+		text-decoration: none
+		color: $textcolor
+		&:hover
+			color: $textcolor
+	&__title
+		font-size: 16px
+		font-weight: 700
+		margin-bottom: 15px
+	&__descr
+		margin-bottom: 20px
+	&__info
+		display: flex
+		column-gap: 35px
+		margin-bottom: 15px
+	&__price
+		color: $accent
+		font-weight: 700
+	// &__date
+	&__published
+		font-size: 12px
+		color: $gray

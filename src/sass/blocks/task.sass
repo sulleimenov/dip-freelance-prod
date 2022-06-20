@@ -1,0 +1,65 @@
+.task
+	&__author
+		display: flex
+		align-items: center
+		column-gap: 25px
+		margin-bottom: 30px
+	&__author-image
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50px
+		width: 80px
+		height: 80px
+		background-color: $green-ligth
+	// &__author-text
+	&__author-name
+		font-size: 16px
+		font-weight: 700
+	&__author-registration
+		font-size: 12px
+		color: $gray
+	&__about
+		flex: 1 0
+	&__about-box
+		display: flex
+		justify-content: space-between
+		gap: 30px
+		@include media-breakpoint-down(lg)
+			flex-direction: column
+	// &__about
+	// &__descr
+	&__info
+		flex: 0 0 360px
+		padding: 25px
+		border-radius: $border-radius
+		background-color: $green-ligth
+		height: 100%
+		@include media-breakpoint-down(lg)
+			flex: auto
+	&__auth
+		display: flex
+		align-items: center
+		justify-content: center
+		text-decoration: none
+	&__info-lists
+		display: flex
+		flex-direction: column
+		margin-bottom: 30px
+	&__info-item
+		display: flex
+		justify-content: space-between
+		font-size: 12px
+		font-weight: 500
+		margin-bottom: 15px
+		@include media-breakpoint-down(sm)
+			flex-direction: column
+		&:last-child
+			margin-bottom: 0
+		span
+			&:first-child
+				color: $gray
+	&__answer
+		padding-top: 80px
+		&>.title
+			color: $accent

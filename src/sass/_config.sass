@@ -1,0 +1,77 @@
+$accent: #82B93C
+$fontsize: 14px
+$textcolor: #000000
+$lineheight: 1.65
+$userfont: 'Montserrat', sans-serif
+
+// Colors
+$yellow: #FFDF8C
+$green-ligth: #ECF8DB
+$gray: #8D8D8D
+$white: #ffffff
+$dark: #000000
+
+//
+$border-radius: 10px
+$border-radius-sm: 5px
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// Import section
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
+// @import 'node_modules/bootstrap/scss/_utilities.scss'
+
+// Font loaded
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@mixin font($fontname, $fontstyle, $fontweight, $fonturl)
+	@font-face
+		font-family: $fontname
+		font-style: $fontstyle
+		font-weight: $fontweight
+		src: url($fonturl) format('ttf')
+
+// @include font('Roboto', normal, 400, '../fonts/Roboto-Regular.ttf')
+// @include font('Roboto', italic, 400, '../fonts/Roboto-Italic.ttf')
+// @include font('Roboto', normal, 700, '../fonts/Roboto-Bold.ttf')
+// @include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.ttf')
+
+// General css
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+img.lazy
+	display: block
+	width: 100%
+	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	background-color: $yellow
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	overflow-y: scroll
+	padding: 50px
+	@include media-breakpoint-down(md)
+		padding: 0

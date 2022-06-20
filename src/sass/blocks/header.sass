@@ -1,0 +1,109 @@
+.header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 30px 0
+	border-bottom: 1px solid $green-ligth
+	padding: 30px 50px
+	gap: 20px
+	@include media-breakpoint-down(md)
+		padding: 30px 15px
+
+.logo
+	display: flex
+	&__link
+		display: flex
+		align-items: center
+	&__descr
+		display: flex
+		flex-direction: column
+		margin-left: 20px
+		@include media-breakpoint-down(xl)
+			justify-content: center
+		@include media-breakpoint-down(lg)
+			display: none
+	&__title
+		font-size: 18px
+		font-weight: 700
+		line-height: 1.20
+		text-transform: uppercase
+	&__subtitle
+		@include media-breakpoint-down(xl)
+			display: none
+
+.menu
+	display: flex
+	column-gap: 10px
+	@include media-breakpoint-down(lg)
+		flex: 0 1 100%
+		display: none
+
+.nav
+	display: flex
+	gap: 20px
+	&__item
+		font-weight: 700
+		text-decoration: none
+		margin-left: 30px
+		color: $textcolor
+		cursor: pointer
+		transition: all 0.1s ease
+		&:hover
+			color: $accent
+		&:first-child
+			margin-left: 0
+
+.burger-wrapper
+	position: relative
+.burger
+	display: flex
+	justify-content: center
+	align-items: center
+	position: relative
+	background-color: $green-ligth
+	border-radius: 50px
+	width: 45px
+	height: 45px
+	@include media-breakpoint-up(lg)
+		display: none
+	span
+		position: absolute
+		width: 20px
+		height: 1px
+		background-color: $dark
+		&::before
+			position: absolute
+			content: ''
+			top: -6px
+			width: 20px
+			height: 1px
+			background-color: $dark
+		&::after
+			position: absolute
+			content: ''
+			bottom: -6px
+			width: 20px
+			height: 1px
+			background-color: $dark
+
+.burger-dropdown
+	display: flex
+	flex-direction: column
+	background-color: #ECF8DB
+	padding: 10px 20px
+	border-radius: $border-radius
+	position: absolute
+	top: 55px
+	right: -20px
+	min-width: 210px
+	transition: all .100s ease
+	transform: translateY(5px)
+	@include media-breakpoint-down(md)
+		right: 0
+	a
+		text-decoration: none
+		padding: 5px 0
+	&:not(.show)
+		opacity: 0
+		visibility: hidden
+		transform: translateY(0)
