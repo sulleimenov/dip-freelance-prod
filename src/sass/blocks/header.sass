@@ -41,6 +41,8 @@
 .nav
 	display: flex
 	gap: 20px
+	@include media-breakpoint-down(lg)
+		align-items: center
 	&__item
 		font-weight: 700
 		text-decoration: none

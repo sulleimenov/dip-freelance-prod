@@ -29,10 +29,10 @@ const Complete = () => {
 	// }, [])
 
 	const userId = auth.user ? auth.user.id : ''
-	
+	console.log(auth.user);
 	useEffect(() => {
 		api
-			.get(`/tender?author_id=${userId}`)
+			.get(`/tender?author_id=${userId}&deal=1`)
 			.then(function (response) {
 				setTenders(response.data)
 				setLoaded(true)

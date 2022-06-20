@@ -31,6 +31,10 @@
 		display: flex
 		column-gap: 35px
 		margin-bottom: 15px
+		@include media-breakpoint-down(sm)
+			flex-direction: column
+			gap: 10px
+			margin-bottom: 10px
 	&__price
 		color: $accent
 		font-weight: 700

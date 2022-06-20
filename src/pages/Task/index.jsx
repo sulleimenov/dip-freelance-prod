@@ -70,6 +70,7 @@ function Task() {
 				offer_price: answerPrice,
 				offer_deadline: answerDeadline,
 				message: answerMessage,
+				deal: 0
 			})
 			.then((response) => {
 				setAnswerSuccess(true)

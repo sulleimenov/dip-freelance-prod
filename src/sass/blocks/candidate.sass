@@ -1,0 +1,47 @@
+.candidate-list
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 15px
+	@include media-breakpoint-down(xl)
+		grid-template-columns: repeat(2, 1fr)
+	@include media-breakpoint-down(lg)
+		grid-template-columns: repeat(1, 1fr)
+	&__item
+		background-color: #ECF8DB
+		border-radius: 10px
+		padding: 30px 25px
+	&__row
+		display: flex
+		justify-content: space-between
+		&:not(:last-child)
+			padding-bottom: 10px
+		span
+			&:first-child
+				color: #8D8D8D
+		&_message
+			display: flex
+			justify-content: space-between
+			flex-direction: column
+			gap: 10px
+			padding-bottom: 20px
+			span
+				&:first-child
+					color: #8D8D8D
+	&__except
+		text-align: right
+		font-weight: 700
+		color: #F6B361
+	&__accept
+		text-align: right
+		font-weight: 700
+		color: #82B93C
+		cursor: pointer
+	&__progress
+		text-align: right
+		font-weight: 700
+		color: #82B93C
+	&__close
+		text-align: right
+		font-weight: 700
+		color: #e92626
+		cursor: pointer
