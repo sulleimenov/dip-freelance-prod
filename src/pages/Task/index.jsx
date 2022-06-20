@@ -18,6 +18,7 @@ function Task() {
 	const [answerDeadline, setAnswerDeadline] = useState('')
 	const [answerMessage, setAnswerMessage] = useState('')
 	const [answerSuccess, setAnswerSuccess] = useState(false)
+
 	let back = useNavigate()
 
 	let { id } = useParams()
@@ -48,8 +49,6 @@ function Task() {
 			})
 	}, [])
 
-	let status = tenders.find((tender) => tender.task_id === task.id)
-	
 	const handleSubmit = async (event) => {
 		api
 			.post('/tender', {
@@ -70,7 +69,7 @@ function Task() {
 				offer_price: answerPrice,
 				offer_deadline: answerDeadline,
 				message: answerMessage,
-				deal: 0
+				deal: 0,
 			})
 			.then((response) => {
 				setAnswerSuccess(true)
@@ -170,7 +169,9 @@ function Task() {
 								</div>
 								<div className="task__info-item">
 									<span>Стоимость:</span>
-									<span>{task.price} {task.price === 'Договорная' ? '' : 'тенге'}</span>
+									<span>
+										{task.price} {task.price === 'Договорная' ? '' : 'тенге'}
+									</span>
 								</div>
 								<div className="task__info-item">
 									<span>Срок выполнения:</span>
@@ -184,19 +185,13 @@ function Task() {
 								</div>
 							</div>
 							{auth.user ? (
-								status ? (
-									<button className="button button_waiting full">
-										Ожидание
-									</button>
-								) : (
-									<button
-										className="button full"
-										onClick={() => {
-											setAnswer(!answer)
-										}}>
-										Предложить услуги
-									</button>
-								)
+								<button
+									className="button full"
+									onClick={() => {
+										setAnswer(!answer)
+									}}>
+									Предложить услуги
+								</button>
 							) : (
 								<Link className="task__auth button full" to="/login">
 									Авторизоваться

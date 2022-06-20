@@ -65,7 +65,9 @@ const Candidate = () => {
 				console.log(error)
 			})
 		api
-			.delete(`/tasks/${deltaskid}`)
+			.patch(`/tasks/${deltaskid}`, {
+				status: 0
+			})
 			.then((response) => {})
 			.catch(function (error) {
 				console.log(error)
@@ -76,9 +78,9 @@ const Candidate = () => {
 		<div>
 			<div className="title">Исполнители</div>
 			{tenders.length !== 0 ? (
-				tenders.map((tender, index) => (
-					<div className="candidate-list" key={index}>
-						<div className="candidate-list__item">
+				<div className="candidate-list">
+					{tenders.map((tender, index) => (
+						<div className="candidate-list__item" key={index}>
 							<div className="candidate-list__row">
 								<span>Статус:</span>
 								<span>
@@ -125,8 +127,8 @@ const Candidate = () => {
 								</div>
 							)}
 						</div>
-					</div>
-				))
+					))}
+				</div>
 			) : (
 				<div className="not">На вашу работу еще никто не отозвался!</div>
 			)}

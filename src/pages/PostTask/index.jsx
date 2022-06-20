@@ -40,7 +40,7 @@ const PostTask = () => {
 		api
 			.post('/tasks', {
 				id: uuidv4(),
-				author: `${auth.user.lastName} ${auth.user.firstName}`,
+				author: `${auth.user.firstName}`,
 				author_id: auth.user.id,
 				email: auth.user.email,
 				title: postTitle,
